@@ -1,0 +1,52 @@
+<section class="sign-up">
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="sign-1 col-sm-12 col-md-3 float-left"></div>
+                <div class="signup-form col-sm-12 col-md-6 float-left">
+                    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group" [ngClass]="{'has-error' : signupForm.get('fullName').errors && signupForm.get('fullName').touched || signupForm.get('fullName').dirty }">
+                            <div class="first-name heading">
+                                <label for="fullName">FullName:</label>
+                                <input type="text" class="form-control" formControlName="fullName" placeholder="FullName">
+                                <span *ngIf="fullName.invalid && fullName.touched" class="error">enter vaild name</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="email heading">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" formControlName="email" placeholder="some@mail.com">
+                                <span *ngIf="email.invalid && email.touched" class="error" >email is invalid</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="phone heading">
+                                <label for="mobile">Mobile:</label>
+                                <input type="tel" class="form-control" formControlName="mobile" placeholder="Mobile">
+                                <span *ngIf="mobile.invalid && mobile.touched" class="error">enter valid phone number</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="confirm heading">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" formControlName="password" placeholder="Confirm Password">
+                                <span *ngIf="password.invalid && password.touched" class="error">enter a vaild password</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="confirm heading">
+                                <label for="confirm">Confirm Password:</label>
+                                <input type="password" class="form-control" formControlName="confirm" placeholder="Confirm Password">
+                                <span *ngIf="confirm.invalid && confirm.touched" class="error">enter a vaild password</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="sign-1 col-sm-12 col-md-3 float-lefts"></div>
+            </div>
+        </div>
+    </div>
+</section>
